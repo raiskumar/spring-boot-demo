@@ -1,4 +1,5 @@
-#Spring Boot Demo Application
+# Spring Boot Demo Application
+A demo (Rest Service) application to show the power and simplicity of Spring Boot!
 
 ## Logical Components
 ### 1. package: rest 
