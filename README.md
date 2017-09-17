@@ -36,3 +36,7 @@ $./gradlew dependencies
 3. How to change values based on profile. Application.properties and Application-local.properties are two profiles available. Spring boot can pick the appropriate profile based on the value of 'spring.profiles.active'.
 Note, how the server can be started on different port based on the value. 
 
+
+### References:
+1. Configuring profile using YAML: https://hoserdude.com/2014/06/19/spring-boot-configurationproperties-and-profile-management-using-yaml/
+
