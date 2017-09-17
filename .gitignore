@@ -2,19 +2,9 @@
 /build/
 !gradle/wrapper/gradle-wrapper.jar
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
 .project
 .settings
 .springBeans
-classes
-
-### IntelliJ IDEA ###
 .idea
-*.iws
-*.iml
-*.ipr
 
 

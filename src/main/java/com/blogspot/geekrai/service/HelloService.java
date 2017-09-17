@@ -4,7 +4,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class HelloService {
-    public String sayHello(String name){
-        return "hello, "+ name;
+    //@Autowired
+    //MessageReader messageReader;
+    //MessageSource messageSource;
+
+    //@Autowired
+    //private Environment env;
+
+    public String sayHello(String name) {
+        //System.out.println(env.getProperty("env"));
+        //return messageSource.getMessage("GREETING_TEXT", null, null)+ name;
+        return "hello, " + name;
     }
 }
