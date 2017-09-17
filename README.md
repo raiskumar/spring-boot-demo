@@ -22,6 +22,10 @@ Or, run below after build
 
 $java -jar build/libs/spring-boot-demo-0.0.1-SNAPSHOT.jar
 
+#### Run with profile
+$java -jar -Dspring.profiles.active=jenkins build/libs/spring-boot-demo-0.0.1-SNAPSHOT.jar
+Runs server on port given in Application-jenkins.properties
+
 ## Show Gradle dependencies
 $./gradlew dependencies 
 
