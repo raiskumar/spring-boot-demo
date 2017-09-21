@@ -12,6 +12,10 @@ Non-Http aware. Abstracts business logic. Performs DB queries.
 #### 3. package: common
 Provides common functionalities like Exception handling, config, property file reading etc.
 
+## Component Diagram
+Below is the component diagram of the demo application. [ref](https://www.ibm.com/developerworks/rational/library/dec04/bell/index.html)
+
+
 ## How to Build and Run
 #### Build with gradlew or gradle
 $./gradlew build
