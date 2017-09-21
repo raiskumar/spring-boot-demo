@@ -18,21 +18,21 @@ Below is the component diagram of the demo application. [ref1](https://www.ibm.c
 
 ## How to Build and Run
 #### Build with gradlew or gradle
-$./gradlew build
+   $./gradlew build
 
 #### Run using Spring boot command
-$./gradlew bootRun
+    $./gradlew bootRun
 
 #### Run with Jar
-$java -jar build/libs/spring-boot-demo-0.0.1-SNAPSHOT.jar
+    $java -jar build/libs/spring-boot-demo-0.0.1-SNAPSHOT.jar
 
 #### Run with profile
-$java -jar -Dspring.profiles.active=jenkins build/libs/spring-boot-demo-0.0.1-SNAPSHOT.jar
+    $java -jar -Dspring.profiles.active=jenkins build/libs/spring-boot-demo-0.0.1-SNAPSHOT.jar
 
 Refers to Application-jenkins.properties
 
 #### Show Gradle dependencies
-$./gradlew dependencies 
+    $./gradlew dependencies 
 
 ## Features in the application
 1. Application Setup with a sample controller and service component. 
