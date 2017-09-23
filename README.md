@@ -12,23 +12,27 @@ Non-Http aware. Abstracts business logic. Performs DB queries.
 #### 3. package: common
 Provides common functionalities like Exception handling, config, property file reading etc.
 
+## Component Diagram
+Below is the component diagram of the demo application. [ref1](https://www.ibm.com/developerworks/rational/library/dec04/bell/index.html) & [ref2](http://www.uml-diagrams.org/component.html)
+
+
 ## How to Build and Run
 #### Build with gradlew or gradle
-$./gradlew build
+   $./gradlew build
 
 #### Run using Spring boot command
-$./gradlew bootRun
+    $./gradlew bootRun
 
 #### Run with Jar
-$java -jar build/libs/spring-boot-demo-0.0.1-SNAPSHOT.jar
+    $java -jar build/libs/spring-boot-demo-0.0.1-SNAPSHOT.jar
 
 #### Run with profile
-$java -jar -Dspring.profiles.active=jenkins build/libs/spring-boot-demo-0.0.1-SNAPSHOT.jar
+    $java -jar -Dspring.profiles.active=jenkins build/libs/spring-boot-demo-0.0.1-SNAPSHOT.jar
 
 Refers to Application-jenkins.properties
 
 #### Show Gradle dependencies
-$./gradlew dependencies 
+    $./gradlew dependencies 
 
 ## Features in the application
 1. Application Setup with a sample controller and service component. 
