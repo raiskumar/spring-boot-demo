@@ -1,32 +1,115 @@
 buildscript {
+    configurations {
+        compile.exclude module: "spring-boot-starter-tomcat"
+        compile.exclude module: "tomcat-embed-websocket"
+    }
     ext {
-        springBootVersion = '1.5.7.RELEASE'
+        springBootVersion = '1.5.6.RELEASE'
+        commonsCollectionsVersion = '4.1'
+        commonsLangVersion = '3.5'
+        commonsIoVersion = '2.5'
+        cucumberPluginVersion = '0.8'
+        sonarQubeVersion = '2.2.1'
+        okHTTPVersion = '3.9.0'
+
+        javaxValidationVersion = '1.1.0.Final'
+        apacheBValVersion = '1.1.2'
+        couchbaseClientVersion = '2.4.1'
+        groovyBackPortVersion = '2.3.7'
+        jacksonDatatypeVersion = '2.8.5'
+        restAssuredVersion = '3.0.1'
+        assertjVersion = '3.6.1'
+        mockitVersion = '2.3.11'
+        groovyAllVersion = '2.4.7'
+        cucumberJavaVersion = '1.2.5'
+        cucumberJunitVersion = '1.2.5'
+        junitVersion = '4.12'
+        javassistVersion = '3.19.0-GA'
+        swaggerCoreVersion = '1.5.9'
+        reflectionsVersion = '0.9.9'
+        jacksonVersion = '2.4.4'
+        commonsIOVersion = '2.5'
+        snakeYamlVersion = '1.17'
+        // Used for parsing json in Acceptance Tests as we don't want to use dev DTOs
+        jayWayVersion = '2.2.0'
+        commonsMathVersion = '3.6.1'
+        zxingVersion = '3.3.0'
+        slf4jVersion = '1.7.25'
+        logbackVersion = '1.2.3'
+        swaggerFox = '2.7.0'
     }
     repositories {
         mavenCentral()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath 'io.github.robwin:swagger2markup-gradle-plugin:0.9.1'
+        classpath 'io.spring.gradle:dependency-management-plugin:0.5.3.RELEASE'
     }
 }
 
 apply plugin: 'java'
-apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'io.github.robwin.swagger2markup'
 
-group = 'com.github.raiskumar'
-version = '0.0.1-SNAPSHOT'
+jar {
+    baseName = 'spring-boot-demo-service'
+    manifest {
+        attributes(
+                'Implementation-Title': project.name,
+                'Implementation-Version': 'dev-snapshot'
+        )
+    }
+}
+
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
 
 
+ext {
+    springCloudVersion = 'Dalston.SR2'
+}
+
 dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.boot:spring-boot-actuator-docs')
+    compile('org.springframework.boot:spring-boot-starter-aop')
     compile('org.springframework.boot:spring-boot-starter-web')
-    compileOnly('org.projectlombok:lombok')
+    compile("org.springframework.boot:spring-boot-starter-undertow")
+
+    compile('org.springframework.cloud:spring-cloud-starter-hystrix')
+    compile('org.springframework.boot:spring-boot-starter-data-couchbase')
+    compile('org.springframework.boot:spring-boot-starter-validation')
+
+    compile group: 'org.apache.commons', name: 'commons-collections4', version: "$commonsCollectionsVersion"
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: "$commonsLangVersion"
+    compile group: 'commons-io', name: 'commons-io', version: "$commonsIoVersion"
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: "$jacksonDatatypeVersion"
+    compile group: 'com.fasterxml.jackson.module', name: 'jackson-module-jsonSchema', version: "$jacksonVersion"
+    compile group: 'javax.validation', name: 'validation-api', version: "$javaxValidationVersion"
+    compile group: 'org.apache.bval', name: 'bval-jsr', version: "$apacheBValVersion"
+    compile 'io.springfox:springfox-swagger2:2.3.0'
+
+    compile "org.slf4j:slf4j-api:$slf4jVersion"
+    compile "ch.qos.logback:logback-classic:$logbackVersion"
+
+    compile group: 'com.squareup.okhttp3', name: 'okhttp', version: "$okHTTPVersion"
+    compile group: 'com.squareup.okhttp3', name: 'logging-interceptor', version: "$okHTTPVersion"
+
+    compile('org.projectlombok:lombok')
+
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
 }
