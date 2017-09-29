@@ -18,18 +18,15 @@ public class DemoExceptionHandler {
     @ExceptionHandler(value = {DemoException.class})
     public ResponseEntity<?> handlePointException(DemoException ex) {
         //log.error(requestMetaInfo.getTraceId() + ":", ex);
-        //return new ResponseEntity<>(buildErrorResponseFromPointException(ex), null, ex.getErrorCodes().getHttpStatus());
-        return null;
+        return new ResponseEntity<>(buildErrorResponseFromPointException(ex), null, ex.getErrorCodes().getHttpStatus());
     }
 
 
     private ErrorResponse buildErrorResponseFromPointException(DemoException ex) {
-        /*return ErrorResponse.builder()
-                .code(ex.getErrorCodes().getErrorCode())
-                .detail(ex.getMessage())
-                .build();*/
-        //return ErrorResponse
-        return null;
+        return ErrorResponse.builder()
+                     .code(ex.getErrorCodes().getErrorCode())
+                    .detail(ex.getReason())
+                    .build();
     }
 
 }

@@ -1,6 +1,7 @@
 package com.blogspot.geekrai.rest;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @Getter
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@AllArgsConstructor
 public class ErrorResponse {
     private String code;   // Mandatory -Application Error String like "access_denied"
     private String detail;  // optional
