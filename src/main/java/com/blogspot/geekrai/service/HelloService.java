@@ -23,6 +23,6 @@ public class HelloService {
             throw new DemoException("valid name is required", DemoException.ErrorCodes.BAD_REQUEST);
         }
         log.info(" Hello Service, name =", name);
-        return propertyReader.getFromMesssagesProperties("GREETING_TEXT") + name;
+        return propertyReader.getFromMesssagesProperties("GREETING_TEXT") +", "+ name;
     }
 }

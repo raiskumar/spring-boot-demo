@@ -30,7 +30,7 @@ public class DemoController {
      */
     @RequestMapping(method = RequestMethod.GET, path = "/hello/{name}")
     public ResponseEntity<?> hello(@PathVariable("name") String name) throws DemoException{
-        //log.info("inside controller class");
+        log.info("inside controller class");
         String response = service.sayHello(name);
         return new ResponseEntity<Object>(response, HttpStatus.OK);
     }
