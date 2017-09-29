@@ -42,7 +42,9 @@ Refers to Application-jenkins.properties
 1. Application Setup with a sample controller and service component. 
 2. Support for message.properties and application.properties. (Check PropertyReader.java)
 3. How to change values based on profile. Application.properties and Application-local.properties are two profiles available. Spring boot can pick the appropriate profile based on the value of 'spring.profiles.active'.
-Note, how the server can be started on different port based on the value. 
+Note, how the server can be started on different port based on the value.
+4. Provide a custom error message (in JSON format) if something goes wrong
+5. Handle Exception at a centralized place using Spring Boot suggested approach (Check RestControllerAdvice for more details) 
 
 
 ### References:
