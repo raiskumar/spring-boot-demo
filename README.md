@@ -1,6 +1,7 @@
 ## Spring Boot Demo Application
 A demo (Rest Service) application to show the power and simplicity of Spring Boot!
-Note:
+
+<br/>Note:
 <br/>1. Make sure that your IDE has Lombok plugin.
 <br/>2. Also, ensure that - Annotation processing is enabled in your IDE (in case you are using IDE)
 
