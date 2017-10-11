@@ -18,6 +18,7 @@ Provides common functionalities like Exception handling, config, property file r
 
 ## Component Diagram
 Below is the component diagram of the demo application. [ref1](https://www.ibm.com/developerworks/rational/library/dec04/bell/index.html) & [ref2](http://www.uml-diagrams.org/component.html)
+
 ![component-diagram](https://github.com/raiskumar/spring-boot-demo/blob/master/component-diagram.png)
 
 
